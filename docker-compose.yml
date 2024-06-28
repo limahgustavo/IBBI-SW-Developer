@@ -1,0 +1,36 @@
+version: "3.9"
+services:
+  db:
+      image: mysql
+      container_name: my-mysql
+      restart: always
+      environment:
+        MYSQL_DATABASE: "mysqlDB"
+        MYSQL_ROOT_PASSWORD: "root"
+      ports:
+        - "3307:3306"
+      volumes:
+        - ./mysql-volume:/var/lib/mysql
+
+  backend:
+    build: "./Backend"
+    container_name: backend
+    restart: always
+    volumes:
+      - ./backend:/app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+
+  frontend:
+    build: "./Frontend"
+    container_name: frontend
+    restart: always
+    volumes:
+      - ./frontend:/app
+    ports:
+    - "4200:4200"
+
+
+    
