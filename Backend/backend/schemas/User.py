@@ -1,5 +1,5 @@
 from pydantic import BaseModel, EmailStr
-
+from datetime import datetime
 
 class Message(BaseModel):
     message: str
@@ -23,3 +23,12 @@ class UserDB(UserSchema):
 
 class UserList(BaseModel):
     users: list[UserPublic]
+
+
+class TokenData(BaseModel):
+    access_token: str
+    expires_at: datetime
+
+class UserValid(BaseModel):
+    username: str
+    password: str

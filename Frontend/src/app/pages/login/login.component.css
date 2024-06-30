@@ -1,0 +1,109 @@
+/* Reset de estilos básicos */
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif; /* Exemplo de fonte, ajuste conforme necessário */
+  overflow-x: hidden; /* Impede a rolagem horizontal */
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* Estilos para o contêiner principal */
+.parent {
+  width: 100%;
+  height: 100vh; /* 100% da altura da viewport */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #282A36; /* Cor de fundo opcional */
+}
+
+/* Estilos para o cartão de login */
+.card {
+  width: 100%;
+  max-width: 400px; /* Ajuste o máximo conforme necessário */
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+}
+
+/* Estilos para os títulos de Entrar e Cadastrar */
+.card h2 {
+  margin-bottom: 10px;
+}
+
+/* Estilos para os links Entrar e Cadastrar */
+.login_register {
+  display: flex;
+  width: 100%;
+  justify-content: space-around; /* Espaçamento uniforme entre os links */
+  margin-bottom: 20px; /* Espaçamento abaixo dos links */
+}
+
+.login_register a {
+  font-size: 1em;
+  padding: 10px 20px; /* Espaçamento interno dos links */
+  border-radius: 15px;
+  text-decoration: none; /* Remover sublinhado padrão */
+  color: #5881D0;
+  cursor: pointer; /* Alterar cursor para indicar que é clicável */
+}
+
+.login_register a.active {
+  background-color: #5881D0; /* Cor de fundo quando o link está ativo */
+  color: white; /* Cor do texto quando o link está ativo */
+}
+
+/* Estilos para o formulário */
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form input {
+  padding: 10px;
+  margin-bottom: 15px; /* Espaçamento entre os campos de entrada */
+  border-radius: 5px;
+  border: 1px solid #DDDDDD;
+  color: #A0A6A3;
+  font-family: "Roboto Mono", sans-serif;
+  box-shadow: 1px 5px 9px rgba(211, 211, 211, .7);
+}
+
+/* Estilos para o botão de login/registrar */
+.login_btn {
+  font-size: 20px;
+  color: white;
+  border-radius: 15px;
+  border: none;
+  background-color: #5881D0;;
+  width: 100%;
+  padding: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  cursor: pointer; /* Alterar cursor para indicar que é clicável */
+}
+
+/* Estilos para o rodapé do cartão */
+.footer_card {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.footer_card p {
+  margin-right: 10px;
+}
+
+.footer_card a {
+  color: #5881D0;
+}

@@ -1,0 +1,42 @@
+<div class="parent">
+  <div class="card" [ngClass]="{'register-mode': isRegister}">
+    <h2 *ngIf="!isRegister">Entrar</h2>
+    <h2 *ngIf="isRegister">Cadastrar</h2>
+
+    <!-- SE CONNECTER / S'INSCRIRE -->
+    <div class="login_register">
+      <a class="login" [ngClass]="{active: !isRegister}" (click)="toggleMode(false)">Entrar</a>
+      <a class="register" [ngClass]="{active: isRegister}" (click)="toggleMode(true)">Cadastrar</a>
+    </div>
+
+    <!-- FORMULÁRIO -->
+    <form class="form">
+      <input *ngIf="isRegister" type="email" name="EmailId" [(ngModel)]="loginObj.EmailId"
+        placeholder="Email" class="email">
+      <input type="text" name="Username" [(ngModel)]="loginObj.Username"
+        placeholder="Nome de usuário" class="username">
+      <input type="password" name="Password" [(ngModel)]="loginObj.Password"
+        placeholder="Senha" class="pass">
+      <input *ngIf="isRegister" type="password" name="ConfirmPassword" [(ngModel)]="loginObj.ConfirmPassword"
+        placeholder="Confirmar senha" class="pass">
+    
+      <!-- Mostra mensagem se as senhas não coincidirem -->
+      <div *ngIf="isRegister && loginObj.Password !== loginObj.ConfirmPassword" class="password-error">
+        As senhas não coincidem.
+      </div>
+    </form>
+
+    <!-- LINK PARA RECUPERAÇÃO DE SENHA -->
+    <a href="#" class="fp" *ngIf="!isRegister">Esqueceu a senha?</a>
+
+    <!-- BOTÃO DE LOGIN/REGISTRO -->
+    <button type="button" (click)="onSubmit()" class="login_btn">
+      {{ isRegister ? 'Cadastrar' : 'Entrar' }}
+    </button>
+
+    <!-- RODAPÉ DO CARD -->
+    <div class="footer_card">
+      <!-- Conteúdo do rodapé, se houver -->
+    </div>
+  </div>
+</div>

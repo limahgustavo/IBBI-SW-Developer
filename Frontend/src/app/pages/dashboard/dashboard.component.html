@@ -1,0 +1,21 @@
+<p>dashboard works!</p>
+<button class="btn btn-primary" (click)="getValue()">getValue</button>
+
+<br>
+<p>{{newList}}</p>
+
+<div class="row">
+    @for (item of newList; track $index) {
+        <div class="col-5" >
+            <h3> {{item.groupKey}}</h3>
+            <ul>
+                @for (subItem of item.subItems; track $index) {
+                    <li> {{getKey(subItem)}} : {{subItem[getKey(subItem)]}}</li>
+                }
+            </ul>
+
+        </div>
+
+    }
+   
+</div>
